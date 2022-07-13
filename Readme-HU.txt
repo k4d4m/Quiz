@@ -1,6 +1,6 @@
 Quiz játék leírás:
 
-- Készíts kérdés fileokat, a "Questions.txt" file alapján.
+- Készíts kérdés fileokat, a "Questions.csv" file alapján.
 	- Az első sort ne módosítsd, ott látod hogy miket kell megadnod.
 	- Egy kérdés 6 paraméterből áll, vesszővel elválasztva.
 		- Maga a kérdés kérdés, A opció, B opció, C opció, D opció, és a helyes válasz betűjele.

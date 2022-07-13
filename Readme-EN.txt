@@ -1,6 +1,6 @@
 Quiz game:
 
-- You can create question files based on the "Questions.txt" file.
+- You can create question files based on the "Questions.csv" file.
 	- Don't change the first line, it's just the header.
 	- A question is made of 6 parameters separated by commas.
 		- The question, option A, option B, option C, option D, and the letter of the correct answer.
