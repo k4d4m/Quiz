@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using CsvHelper;
 using System.Security.Cryptography;
 using System.Media;
+using CsvHelper.Configuration;
 
 namespace Quiz
 {
@@ -118,20 +119,18 @@ namespace Quiz
 
         private void LoadAllQuestions(string[] filePaths)
         {
-            //CurrentPlayer = 0;
             questions = new List<QuestionWithAnswers>[10];
             for (int i = 0; i < numTopic.Value; i++)
             {
                 if (filePaths[i] != null && filePaths[i] != String.Empty)
                 {
                     var streamReader = File.OpenText(filePaths[i]);
-
-                    File.OpenText(filePaths[i]);
-
-                    var csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
-
+                    var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
+                    {
+                        Delimiter = ","
+                    };
+                    var csvReader = new CsvReader(streamReader, csvConfig);
                     var questions = csvReader.GetRecords<QuestionWithAnswers>();
-
                     this.questions[i] = new List<QuestionWithAnswers>();
 
                     foreach (var question in questions)
